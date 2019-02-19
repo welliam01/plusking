@@ -1,1 +1,2 @@
-# plusking
+# mykingbot
+King Bot
