@@ -27,7 +27,7 @@ const sql = require("sqlite");
  const pretty = require('pretty-ms') 
 ,ti={}  
 ,spee={};
- const prefix = "*";
+ const prefix = "-";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -58,7 +58,7 @@ client.on('ready', () => {
 
 
    client.on('message', message => {
-    const prefix = '*'
+    const prefix = '-'
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
@@ -228,31 +228,6 @@ client.on('message', function(msg) {
 
 
 
-client.on("message", message => {
-	var prefix = "*";
- if (message.content === "*help") {
-  const embed = new Discord.RichEmbed()  
-      .setColor("#8325c0") 
-      .setDescription(`
-	  
-	       Help Commands: 
-
-			 
-${prefix}public ⥨ الاوامر العامة
-
-${prefix}admin ⥨ اوامر الادارة
-			 
-${prefix}games ⥨ اوامر الالعاب
-
-${prefix}music ⥨ اوامر الموسيقى
-
-Other Commands:
-
-
-${prefix}invite ⥨ لدعوة البوت الى سيرفرك
-
-${prefix}support ⥨ لدخول سيرفر الدعم
-
 
 	  `)
    message.channel.sendEmbed(embed)
@@ -262,7 +237,7 @@ ${prefix}support ⥨ لدخول سيرفر الدعم
    
 
    client.on("message", message => {
- if (message.content === "*public") {
+ if (message.content === "-help") {
         message.react("📫")
 	           message.react("✅")
   const embed = new Discord.RichEmbed() 
@@ -270,26 +245,34 @@ ${prefix}support ⥨ لدخول سيرفر الدعم
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
 	  
-الاوامــر الــعـــامـــة
+[❖═════ General Commands ═══════❖]
 
-⤠ *invite ⥨ لدعوة البوت الى سيرفرك
-⤠ *server ⥨ معلومات عن السيرفر                      
-⤠ *say ⥨ البوت يردد كلامك         
-⤠ *setcolor ⥨ عشان تغير لونك ملاحظة لازم تحط رقم اللون                                          
-⤠ *bot ⥨ معلومات عن البوت
-⤠ *ping ⥨ لمعرفه سرعه البوت
-⤠ *members ⥨ معلومات عن الاعضاء
-⤠ *emojilist ⥨ لعرض الايموجي حقت السيرفر
-⤠ *id ⥨ لمعرفة معلومات حسابك
-⤠ *avatar ⥨ لاعطائك صورة الشخص اللي منشنته مع الرابط
-⤠ *link ⥨ يعطيك رابط انفايت للسيرفر اللي انت فيه
-⤠ *trans <language> <any thing> ⥨ يترجم لك الي تبيه من اي لغة
-⤠ *short ⥨ لاختصار الروابط
-⤠ *embed ⥨ كتابة كلامك داخل امبد
-⤠ *tag ⥨ يكتب لك الكلمة بشكل جميل وكبير
-⤠ *contact ⥨ لارسال رسالة لصاحب البوت
-⤠ *support ⥨ لدخول سيرفر دعم البوت
-	  
+**
+
+╔═══╦╗──────╔══╗───╔╗
+║╔═╗║║──────║╔╗║──╔╝╚╗
+║╚═╝║║╔╗╔╦══╣╚╝╚╦═╩╗╔╝
+║╔══╣║║║║║══╣╔═╗║╔╗║║
+║║──║╚╣╚╝╠══║╚═╝║╚╝║╚╗
+╚╝──╚═╩══╩══╩═══╩══╩═╝
+⤠ ⚙-invite ⥨ لدعوة البوت الى سيرفرك
+⤠ ⚙-server ⥨ معلومات عن السيرفر                      
+⤠ ⚙-say ⥨ البوت يردد كلامك         
+⤠ ⚙-setcolor ⥨ عشان تغير لونك ملاحظة لازم تحط رقم اللون                                          
+⤠ ⚙-bot ⥨ معلومات عن البوت
+⤠ ⚙-ping ⥨ لمعرفه سرعه البوت
+⤠ ⚙-members ⥨ معلومات عن الاعضاء
+⤠ ⚙-emojilist ⥨ لعرض الايموجي حقت السيرفر
+⤠ ⚙-id ⥨ لمعرفة معلومات حسابك
+⤠ ⚙-avatar ⥨ لاعطائك صورة الشخص اللي منشنته مع الرابط
+⤠ ⚙-link ⥨ يعطيك رابط انفايت للسيرفر اللي انت فيه
+⤠ ⚙-trans <language> <any thing> ⥨ يترجم لك الي تبيه من اي لغة
+⤠ ⚙-short ⥨ لاختصار الروابط
+⤠ ⚙-embed ⥨ كتابة كلامك داخل امبد
+⤠ ⚙-tag ⥨ يكتب لك الكلمة بشكل جميل وكبير
+⤠ ⚙-contact ⥨ لارسال رسالة لصاحب البوت
+⤠ ⚙-support ⥨ لدخول سيرفر دعم البوت
+  **
 `)
 
 
@@ -304,7 +287,7 @@ client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To The Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=456934284566069248&permissions=8&scope=bot')
+     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=544651746220441600&permissions=8&scope=bot')
   .setDescription(`**
   Someone Added Me ✅
 اسم السيرفر: ${guild.name}
@@ -316,7 +299,7 @@ client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To The Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=456934284566069248&permissions=8&scope=bot')
+     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=544651746220441600&permissions=8&scope=bot')
   .setDescription(`**
   I Got Kicked :cry:
 اسم السيرفر: ${guild.name}
@@ -329,7 +312,7 @@ client.channels.get("470259562121920512").sendEmbed(embed)
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = ['In 77 Server','*help | *invite','In 77 Server','*help | *invite','In 77 Server'];
+    var setGame = ['','-help Servers ${client.guilds.size}','-invite Users ${client.users.size}',''];
     var i = -1;
     var j = 0;
     setInterval(function (){
